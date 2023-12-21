@@ -1,8 +1,7 @@
-import 'package:congressapp/core/common_widgets/text_field.dart';
+import 'package:congressapp/app/config/routes/paths.dart';
+import 'package:congressapp/app/core/common_widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../config/routes/paths.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

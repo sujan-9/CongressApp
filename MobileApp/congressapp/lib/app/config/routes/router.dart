@@ -1,5 +1,5 @@
-import 'package:congressapp/features/home_screen/presentation/homepage.dart';
-import 'package:congressapp/features/onboarding_screen/onBoardingScreen.dart';
+import 'package:congressapp/presentation/home/pages/homepage.dart';
+import 'package:congressapp/presentation/onboarding/pages/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:go_router/go_router.dart';

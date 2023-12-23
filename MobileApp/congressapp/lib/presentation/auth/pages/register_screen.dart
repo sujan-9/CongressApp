@@ -43,7 +43,7 @@ class RegisterScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10))),
                   child: const Text(AppStrings.clearField)),
               gapH24,
-              CustonButton(
+              CustomButton(
                 name: AppStrings.register,
                 onPressed: () {},
               )

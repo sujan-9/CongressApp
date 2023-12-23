@@ -26,13 +26,11 @@ class _CustomNavbarState extends State<CustomNavbar> {
   }
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: widget.navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: selectedIndex,
+          currentIndex: widget.navigationShell.currentIndex,
           selectedItemColor: redColor,
           showSelectedLabels: true,
           showUnselectedLabels: true,
@@ -45,9 +43,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
           },
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
+              icon: Icon(Icons.home),
               label: AppStrings.home,
             ),
             BottomNavigationBarItem(

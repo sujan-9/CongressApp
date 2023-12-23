@@ -1,4 +1,4 @@
-import 'package:congressapp/app/config/routes/paths.dart';
+import 'package:congressapp/app/config/routes/paths/path_root.dart';
 
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';

@@ -22,7 +22,7 @@ enum DataSource {
 class ErrorHandler implements Exception {
   late Failure failure;
   ErrorHandler.handle(dynamic error) {
-    if (error is DioError) {
+    if (error is DioException) {
       failure = _handleError(error);
     } else {
       failure = DataSource.defaultError.getFailure();
@@ -30,15 +30,15 @@ class ErrorHandler implements Exception {
   }
 }
 
-Failure _handleError(DioError error) {
+Failure _handleError(DioException error) {
   switch (error.type) {
-    case DioErrorType.connectionTimeout:
+    case DioExceptionType.connectionTimeout:
       return DataSource.connectTimeOut.getFailure();
-    case DioErrorType.sendTimeout:
+    case DioExceptionType.sendTimeout:
       return DataSource.sendTimeOut.getFailure();
-    case DioErrorType.receiveTimeout:
+    case DioExceptionType.receiveTimeout:
       return DataSource.receiveTimeOut.getFailure();
-    case DioErrorType.badResponse:
+    case DioExceptionType.badResponse:
       switch (error.response?.statusCode) {
         case ResponseCode.badRequest:
           if (error.response != null && error.response!.data != null) {
@@ -79,9 +79,9 @@ Failure _handleError(DioError error) {
         default:
           return DataSource.defaultError.getFailure();
       }
-    case DioErrorType.cancel:
+    case DioExceptionType.cancel:
       return DataSource.cancel.getFailure();
-    case DioErrorType.unknown:
+    case DioExceptionType.unknown:
       return DataSource.defaultError.getFailure();
     default:
       return DataSource.defaultError.getFailure();

@@ -2,8 +2,8 @@ import 'package:congressapp/app/core/constants/pallets.dart';
 
 import 'package:flutter/material.dart';
 
-class CustonButton extends StatelessWidget {
-  const CustonButton({super.key, required this.name, required this.onPressed});
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, required this.name, required this.onPressed});
 
   final String name;
   final VoidCallback onPressed;

@@ -1,5 +1,6 @@
 import 'package:congressapp/app/config/routes/paths.dart';
-import 'package:congressapp/app/core/common_widgets/text_field.dart';
+
+import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,9 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(12.0, 50, 12, 0),
         child: Column(
           children: [
-            const CustomTextField(),
+            const Center(
+              child: Text(AppStrings.home),
+            ),
             const SizedBox(
               height: 30,
             ),

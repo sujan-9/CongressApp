@@ -11,4 +11,11 @@ class Paths {
       RouteModel(routeName: 'onboardingScreen', path: '/onboardingScreen');
 
   static final RouteModel demo = RouteModel(routeName: 'demo', path: '/demo');
+  static final RouteModel loginScreenRoute =
+      RouteModel(routeName: 'loginScreen', path: '/loginScreen');
+
+  static final RouteModel registerScreenRoute =
+      RouteModel(routeName: 'registerScreen', path: '/registerScreen');
+  static final RouteModel bottomNavbarScreenRoute =
+      RouteModel(routeName: 'navbarScreen', path: '/navbarScreen');
 }

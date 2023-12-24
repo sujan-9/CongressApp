@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:congressapp/app/config/routes/paths/path_chat_shell.dart';
 import 'package:congressapp/app/config/routes/paths/path_home_shell.dart';
 import 'package:congressapp/app/config/routes/paths/path_more_shell.dart';
@@ -11,6 +13,7 @@ import 'package:congressapp/presentation/more/pages/setting_page.dart';
 
 import 'package:congressapp/presentation/onboarding/pages/onboarding_screen.dart';
 import 'package:congressapp/presentation/polls/pages/poll_page.dart';
+import 'package:congressapp/presentation/splash/pages/splash_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -32,16 +35,29 @@ class AppRouter {
       GlobalKey<NavigatorState>(debugLabel: 'shellMore');
 
   static final router = GoRouter(
-    initialLocation: Paths.loginScreenRoute.path,
+    initialLocation: Paths.splashRoute.path,
     navigatorKey: key,
     debugLogDiagnostics: kReleaseMode ? false : true,
     routes: [
+      GoRoute(
+        path: Paths.splashRoute.path,
+        name: Paths.splashRoute.routeName,
+        pageBuilder: (context, state) => FadeTransitionPage(
+          key: state.pageKey,
+          child: const SplashScreen(),
+        ),
+        redirect: (context, state) {
+          Future.delayed(const Duration(seconds: 2), () {
+            context.go(Paths.loginScreenRoute.path);
+          });
+          return;
+        },
+      ),
       GoRoute(
         path: Paths.onboardingScreenRoute.path,
         name: Paths.onboardingScreenRoute.routeName,
         pageBuilder: (context, state) => FadeTransitionPage(
           key: state.pageKey,
-          // child: const HomeScreen(),
           child: const OnboardingScreen(),
         ),
       ),

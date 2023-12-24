@@ -1,5 +1,4 @@
 import 'package:congressapp/app/config/routes/paths/path_home_shell.dart';
-import 'package:congressapp/app/config/routes/paths/path_root.dart';
 import 'package:congressapp/app/core/constants/pallets.dart';
 import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:congressapp/app/utils/app_strings.dart';

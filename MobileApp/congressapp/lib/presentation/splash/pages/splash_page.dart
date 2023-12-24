@@ -1,3 +1,4 @@
+import 'package:congressapp/app/utils/asset_provider.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -8,8 +9,8 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.all(12),
-        child: const Center(
-          child: Text("Splash Page"),
+        child: Center(
+          child: SizedBox(width: 180, child: AssetProvider.logo),
         ),
       ),
     );

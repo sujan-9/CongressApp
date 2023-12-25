@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   context.go(Paths.onboardingScreenRoute.path);
                 },
-                child: const Text('Next Page'))
+                child: const Text('Home Page'))
           ],
         ),
       ),

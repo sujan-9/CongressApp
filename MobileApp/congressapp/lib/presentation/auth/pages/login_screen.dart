@@ -1,11 +1,9 @@
-import 'package:congressapp/app/config/routes/paths/path_home_shell.dart';
 import 'package:congressapp/app/config/routes/paths/path_root.dart';
 
 import 'package:congressapp/app/core/constants/pallets.dart';
 import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:congressapp/presentation/auth/widgets/custom_button.dart';
-import 'package:congressapp/presentation/auth/widgets/custom_container.dart';
 import 'package:congressapp/presentation/auth/widgets/custom_textfield.dart';
 import 'package:congressapp/presentation/auth/widgets/forget_button.dart';
 import 'package:flutter/material.dart';

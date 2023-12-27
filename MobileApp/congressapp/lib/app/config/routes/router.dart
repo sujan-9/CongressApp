@@ -6,6 +6,8 @@ import 'package:congressapp/presentation/chat/pages/chat_page.dart';
 import 'package:congressapp/presentation/home/pages/homepage.dart';
 import 'package:congressapp/presentation/more/pages/setting_page.dart';
 import 'package:congressapp/presentation/poll/pages/poll_page.dart';
+import 'package:congressapp/presentation/profile/pages/edit_profile.dart';
+import 'package:congressapp/presentation/profile/pages/profile_page.dart';
 import 'package:congressapp/presentation/splash/pages/splash_page.dart';
 import 'package:flutter/foundation.dart';
 
@@ -29,7 +31,7 @@ class AppRouter {
       GlobalKey<NavigatorState>(debugLabel: 'shellMore');
 
   static final router = GoRouter(
-    initialLocation: Paths.loginScreenRoute.path,
+    initialLocation: Paths.homePageScreenRoute.path,
     navigatorKey: key,
     debugLogDiagnostics: kReleaseMode ? false : true,
     routes: [
@@ -47,7 +49,6 @@ class AppRouter {
         name: Paths.registerScreenRoute.routeName,
         pageBuilder: (context, state) => FadeTransitionPage(
           key: state.pageKey,
-          // child: const HomeScreen(),
           child: const RegisterScreen(),
         ),
       ),
@@ -105,7 +106,7 @@ class AppRouter {
                 pageBuilder: (context, state) => FadeTransitionPage(
                   key: state.pageKey,
                   // child: const HomeScreen(),
-                  child: const ChatPage(),
+                  child: ChatPage(),
                 ),
               ),
             ],
@@ -130,14 +131,32 @@ class AppRouter {
             navigatorKey: _shellNavigatorMore,
             routes: <RouteBase>[
               GoRoute(
-                path: Paths.settingPageScreenRoute.path,
-                name: Paths.settingPageScreenRoute.routeName,
-                pageBuilder: (context, state) => FadeTransitionPage(
-                  key: state.pageKey,
-                  // child: const HomeScreen(),
-                  child: const SettingPage(),
-                ),
-              ),
+                  path: Paths.settingPageScreenRoute.path,
+                  name: Paths.settingPageScreenRoute.routeName,
+                  pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        // child: const HomeScreen(),
+                        child: const SettingPage(),
+                      ),
+                  routes: [
+                    GoRoute(
+                        path: Paths.profilePageScreenRoute.path,
+                        name: Paths.profilePageScreenRoute.routeName,
+                        pageBuilder: (context, state) => FadeTransitionPage(
+                              key: state.pageKey,
+                              child: const ProfilePage(),
+                            ),
+                        routes: [
+                          GoRoute(
+                            path: Paths.editProfilePageScreenRoute.path,
+                            name: Paths.editProfilePageScreenRoute.routeName,
+                            pageBuilder: (context, state) => FadeTransitionPage(
+                              key: state.pageKey,
+                              child: const EditProfilePage(),
+                            ),
+                          ),
+                        ]),
+                  ]),
             ],
           ),
         ],

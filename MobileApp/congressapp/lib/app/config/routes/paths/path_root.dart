@@ -23,4 +23,8 @@ class Paths {
       RouteModel(routeName: 'pollsPageScreen', path: '/pollsPageScreen');
   static final RouteModel settingPageScreenRoute =
       RouteModel(routeName: 'settingPageScreen', path: '/settingPageScreen');
+  static final RouteModel profilePageScreenRoute =
+      RouteModel(routeName: 'profilePageScreen', path: 'profilePageScreen');
+  static final RouteModel editProfilePageScreenRoute = RouteModel(
+      routeName: 'editProfilePageScreen', path: 'editProfilePageScreen');
 }

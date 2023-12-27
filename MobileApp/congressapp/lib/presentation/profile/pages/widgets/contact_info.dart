@@ -1,25 +1,10 @@
+import 'package:congressapp/app/core/common_widgets/custom_text.dart';
 import 'package:congressapp/app/core/constants/pallets.dart';
 import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    // required this.controller,
-    // required this.isVisible,
-    required this.hintText,
-    this.prefixIcon,
-    this.label,
-    this.readOnly,
-    this.focus,
-  });
-  // final TextEditingController controller;
-  // final bool isVisible;
-  final String hintText;
-  final Widget? prefixIcon;
-  final Text? label;
-  final bool? readOnly;
-  final bool? focus;
+class ContactInfo extends StatelessWidget {
+  const ContactInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +20,49 @@ class CustomTextField extends StatelessWidget {
               offset: const Offset(0, 2), // changes the position of the shadow
             ),
           ]),
-      child: TextField(
+      child: TextFormField(
         //  controller: ,
-        readOnly: readOnly ?? false,
 
-        style: const TextStyle(
-            fontSize: Sizes.p16,
-            color: Colors.black,
-            fontWeight: FontWeight.bold),
-
+        style: const TextStyle(fontSize: 16.0),
         decoration: InputDecoration(
-          hintText: hintText,
-          hintStyle: const TextStyle(
-              fontSize: Sizes.p16,
-              color: Colors.black,
-              fontWeight: FontWeight.w400),
-          label: label ?? const SizedBox.shrink(),
-          enabled: focus ?? true,
+          label: const Text('Contact info'),
+          enabled: false,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelStyle: const TextStyle(
             color: redColor,
             fontSize: Sizes.p18,
           ),
-          prefixIcon: prefixIcon,
+          disabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Color.fromARGB(255, 0, 0, 3),
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.fromLTRB(12, 16, 12, 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Column(
+                  children: [
+                    Icon(Icons.call_end_rounded),
+                    gapH16,
+                    Icon(Icons.email_rounded),
+                  ],
+                ),
+                gapW24,
+                Column(
+                  children: [
+                    CustomText.small('123456789'),
+                    gapH16,
+                    CustomText.small('123456789'),
+                  ],
+                ),
+              ],
+            ),
+          ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Color.fromARGB(255, 0, 0, 3),
@@ -67,7 +72,7 @@ class CustomTextField extends StatelessWidget {
           ),
           border: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Color.fromARGB(217, 29, 170, 55),
+              color: Color.fromARGB(217, 29, 41, 170),
               width: 2,
             ),
             borderRadius: BorderRadius.circular(8),
@@ -76,13 +81,6 @@ class CustomTextField extends StatelessWidget {
             borderSide: const BorderSide(
               color: Color.fromARGB(204, 39, 152, 17),
               width: 2,
-            ),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Color.fromARGB(255, 0, 0, 3),
-              width: 1,
             ),
             borderRadius: BorderRadius.circular(8),
           ),

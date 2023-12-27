@@ -1,8 +1,8 @@
-import 'package:congressapp/app/config/routes/route_model.dart';
+// import 'package:congressapp/app/config/routes/route_model.dart';
 
-class PathsPollsShell {
-  PathsPollsShell._();
+// class PathsPollsShell {
+//   PathsPollsShell._();
 
-  static final RouteModel pollRoute =
-      RouteModel(routeName: 'poll', path: '/poll');
-}
+//   static final RouteModel pollRoute =
+//       RouteModel(routeName: 'poll', path: '/poll');
+// }

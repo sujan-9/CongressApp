@@ -27,7 +27,8 @@ class ErrorScreen extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    context.go(Paths.demo.path);
+                    // context.go(Paths.demo.path);
+                    context.pop();
                   },
                   child: const Text('Return home'))
             ]),

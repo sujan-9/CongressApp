@@ -1,4 +1,5 @@
 import 'package:congressapp/app/config/routes/paths/path_root.dart';
+import 'package:congressapp/app/core/common_widgets/custom_text.dart';
 
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,11 @@ class HomePage extends StatelessWidget {
               height: 30,
             ),
             ElevatedButton(
-                onPressed: () {
-                  context.go(Paths.onboardingScreenRoute.path);
-                },
-                child: const Text('Home Page'))
+              onPressed: () {
+                context.go(Paths.onboardingScreenRoute.path);
+              },
+              child: CustomText.medium(AppStrings.home),
+            )
           ],
         ),
       ),

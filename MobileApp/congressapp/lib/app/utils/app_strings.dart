@@ -23,4 +23,21 @@ class AppStrings {
   static const String chat = "Chat";
   static const String polls = "Polls";
   static const String more = "More";
+
+  //setting page
+  static const String titleSetting = "Explore More";
+  static const String profile = "Profile";
+  static const String gallery = "Gallery";
+  static const String calender = "Party Calender";
+  static const String meetLeader = "Meet My Leader";
+  //static const String gallery = "Gallery";
+
+  //profile page
+  static const String editProfile = "Edit Profile";
+  static const String nameP = "Name";
+  static const String addressP = "Address";
+  static const String post = "Post";
+
+  //chat page
+  static const String chatroom = "Chat Room";
 }

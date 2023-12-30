@@ -1,11 +1,13 @@
+import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
+import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_9.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ChatPageState createState() => _ChatPageState();
 }
 
@@ -17,28 +19,29 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Chat App'),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: messages.length,
-              itemBuilder: (context, index) {
-                return _buildMessageTile(messages[index]);
-              },
+      appBar: const CustomAppbar(title: AppStrings.chatroom),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: messages.length,
+                itemBuilder: (context, index) {
+                  return _buildMessageTile(messages[index]);
+                },
+              ),
             ),
-          ),
-          _buildBottomChatArea(),
-        ],
+            _buildBottomChatArea(),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildBottomChatArea() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(12.0),
       child: Row(
         children: [
           Expanded(
@@ -75,7 +78,7 @@ class _ChatPageState extends State<ChatPage> {
       setState(() {
         Message newMessage = Message(
           text: messageText,
-          senderImage: 'https://example.com/user_avatar.jpg',
+          senderImage: 'assets/images/logo.png',
           timestamp: _getCurrentTimestamp(),
           isMe: true,
         );
@@ -124,36 +127,47 @@ class CustomChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-      child: ChatBubble(
-        clipper: ChatBubbleClipper9(type: BubbleType.sendBubble),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+          mainAxisAlignment:
+              isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment:
-                  isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
-              children: [
-                _buildAvatar(),
-              ],
+            SizedBox(
+              width: 310,
+              child: ChatBubble(
+                backGroundColor: const Color.fromARGB(185, 56, 134, 59),
+                clipper: ChatBubbleClipper9(type: BubbleType.sendBubble),
+                child:
+                    Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Text(
+                          message,
+                          style: const TextStyle(
+                              color: Colors.white, overflow: TextOverflow.fade),
+                          softWrap: true,
+                        ),
+                      ),
+                      const SizedBox(height: 24.0),
+                      Text(
+                        timestamp,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ]),
+              ),
             ),
-            Text(
-              message,
-              style: const TextStyle(color: Colors.white),
-            ),
-            const SizedBox(height: 4.0),
-            Text(
-              timestamp,
-              style: const TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
+            _buildAvatar(),
+          ]),
     );
   }
 
   Widget _buildAvatar() {
-    return CircleAvatar(
-      backgroundImage: NetworkImage(avatarImageUrl),
+    return const CircleAvatar(
+      radius: 15,
+      backgroundImage: AssetImage('assets/images/logo.png'),
     );
   }
 }

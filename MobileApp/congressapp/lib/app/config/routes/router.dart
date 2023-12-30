@@ -106,7 +106,7 @@ class AppRouter {
                 pageBuilder: (context, state) => FadeTransitionPage(
                   key: state.pageKey,
                   // child: const HomeScreen(),
-                  child: ChatPage(),
+                  child: const ChatPage(),
                 ),
               ),
             ],

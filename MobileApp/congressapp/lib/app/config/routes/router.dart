@@ -2,10 +2,12 @@ import 'package:congressapp/app/config/routes/paths/path_root.dart';
 import 'package:congressapp/presentation/auth/pages/login_screen.dart';
 import 'package:congressapp/presentation/auth/pages/register_screen.dart';
 import 'package:congressapp/presentation/bottom_nav/bottom_navbar.dart';
+import 'package:congressapp/presentation/calender/pages/calender_page.dart';
 import 'package:congressapp/presentation/chat/pages/chat_page.dart';
 import 'package:congressapp/presentation/home/pages/homepage.dart';
 import 'package:congressapp/presentation/more/pages/setting_page.dart';
-import 'package:congressapp/presentation/poll/pages/poll_page.dart';
+import 'package:congressapp/presentation/polls/pages/poll_page.dart';
+
 import 'package:congressapp/presentation/profile/pages/edit_profile.dart';
 import 'package:congressapp/presentation/profile/pages/profile_page.dart';
 import 'package:congressapp/presentation/splash/pages/splash_page.dart';
@@ -139,6 +141,14 @@ class AppRouter {
                         child: const SettingPage(),
                       ),
                   routes: [
+                    GoRoute(
+                      path: Paths.clenderPageScreenRoute.path,
+                      name: Paths.clenderPageScreenRoute.routeName,
+                      pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        child: const CalenderPage(),
+                      ),
+                    ),
                     GoRoute(
                         path: Paths.profilePageScreenRoute.path,
                         name: Paths.profilePageScreenRoute.routeName,

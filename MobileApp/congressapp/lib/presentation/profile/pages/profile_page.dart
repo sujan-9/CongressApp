@@ -1,7 +1,7 @@
 import 'package:congressapp/app/config/routes/paths/path_root.dart';
 import 'package:congressapp/app/config/routes/router.dart';
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
-import 'package:congressapp/app/core/common_widgets/custom_text.dart';
+
 import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:congressapp/app/utils/asset_provider.dart';

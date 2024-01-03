@@ -40,4 +40,6 @@ class AppStrings {
 
   //chat page
   static const String chatroom = "Chat Room";
+
+  static const String calenderTitle = "Calender";
 }

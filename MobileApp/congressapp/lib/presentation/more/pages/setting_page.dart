@@ -33,7 +33,10 @@ class SettingPage extends StatelessWidget {
                   icon: Icons.photo_album_rounded),
 
               CustomContainer(
-                  onTap: () {},
+                  onTap: () {
+                    AppRouter.router
+                        .pushNamed(Paths.clenderPageScreenRoute.routeName);
+                  },
                   text: AppStrings.calender,
                   icon: Icons.calendar_month_rounded),
 

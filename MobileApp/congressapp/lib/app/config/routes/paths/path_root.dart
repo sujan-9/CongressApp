@@ -29,4 +29,6 @@ class Paths {
       routeName: 'editProfilePageScreen', path: 'editProfilePageScreen');
   static final RouteModel clenderPageScreenRoute =
       RouteModel(routeName: 'clenderPageScreen', path: 'clenderPageScreen');
+  static final RouteModel galleryPageScreenRoute =
+      RouteModel(routeName: 'galleryPageScreen', path: 'galleryageScreen');
 }

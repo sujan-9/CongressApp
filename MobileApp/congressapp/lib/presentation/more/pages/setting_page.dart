@@ -28,7 +28,10 @@ class SettingPage extends StatelessWidget {
                   icon: Icons.person_2_outlined),
 
               CustomContainer(
-                  onTap: () {},
+                  onTap: () {
+                    AppRouter.router
+                        .pushNamed(Paths.galleryPageScreenRoute.routeName);
+                  },
                   text: AppStrings.gallery,
                   icon: Icons.photo_album_rounded),
 

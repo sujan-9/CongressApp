@@ -42,4 +42,5 @@ class AppStrings {
   static const String chatroom = "Chat Room";
 
   static const String calenderTitle = "Calender";
+  static const String partyGallery = "Party Gallery";
 }

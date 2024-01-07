@@ -30,6 +30,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
     return Scaffold(
       body: widget.navigationShell,
       bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           currentIndex: widget.navigationShell.currentIndex,
           selectedItemColor: redColor,
           showSelectedLabels: true,

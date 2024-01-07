@@ -21,8 +21,8 @@ class Paths {
       RouteModel(routeName: 'chatPageScreen', path: '/chatPageScreen');
   static final RouteModel pollsPageScreenRoute =
       RouteModel(routeName: 'pollsPageScreen', path: '/pollsPageScreen');
-  static final RouteModel settingPageScreenRoute =
-      RouteModel(routeName: 'settingPageScreen', path: '/settingPageScreen');
+  static final RouteModel morePageScreenRoute =
+      RouteModel(routeName: 'morePageScreen', path: '/morePageScreen');
   static final RouteModel profilePageScreenRoute =
       RouteModel(routeName: 'profilePageScreen', path: 'profilePageScreen');
   static final RouteModel editProfilePageScreenRoute = RouteModel(
@@ -30,5 +30,9 @@ class Paths {
   static final RouteModel clenderPageScreenRoute =
       RouteModel(routeName: 'clenderPageScreen', path: 'clenderPageScreen');
   static final RouteModel galleryPageScreenRoute =
-      RouteModel(routeName: 'galleryPageScreen', path: 'galleryageScreen');
+      RouteModel(routeName: 'galleryPageScreen', path: 'galleryPageScreen');
+  static final RouteModel reportproblemPageScreenRoute = RouteModel(
+      routeName: 'reportproblemPageScreen', path: 'reportproblempageScreen');
+  static final RouteModel settingPageScreenRoute =
+      RouteModel(routeName: 'settingPageScreen', path: 'settingPageScreen');
 }

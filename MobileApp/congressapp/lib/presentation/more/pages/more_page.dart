@@ -6,8 +6,8 @@ import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:congressapp/presentation/more/pages/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
 
-class SettingPage extends StatelessWidget {
-  const SettingPage({super.key});
+class MorePage extends StatelessWidget {
+  const MorePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,6 @@ class SettingPage extends StatelessWidget {
                         .pushNamed(Paths.profilePageScreenRoute.routeName);
                   },
                   icon: Icons.person_2_outlined),
-
               CustomContainer(
                   onTap: () {
                     AppRouter.router
@@ -34,7 +33,6 @@ class SettingPage extends StatelessWidget {
                   },
                   text: AppStrings.gallery,
                   icon: Icons.photo_album_rounded),
-
               CustomContainer(
                   onTap: () {
                     AppRouter.router
@@ -42,24 +40,24 @@ class SettingPage extends StatelessWidget {
                   },
                   text: AppStrings.calender,
                   icon: Icons.calendar_month_rounded),
-
               CustomContainer(
                   onTap: () {},
                   text: AppStrings.meetLeader,
                   icon: Icons.meeting_room_rounded),
-
-              // CustomContainer(
-              //     onTap: () {}, text: 'HELLO', icon: Icons.person_2_outlined),
-              // gapH12,
-              // CustomContainer(
-              //     onTap: () {},
-              //     text: 'Gallery',
-              //     icon: Icons.photo_album_rounded),
-              // gapH12,
-              // CustomContainer(onTap: () {}, text: 'HELLO', icon: Icons.person),
-              // gapH12,
-              // CustomContainer(onTap: () {}, text: 'HELLO', icon: Icons.person),
-              // gapH12,
+              CustomContainer(
+                  onTap: () {
+                    AppRouter.router.pushNamed(
+                        Paths.reportproblemPageScreenRoute.routeName);
+                  },
+                  text: AppStrings.reportProblem,
+                  icon: Icons.report_gmailerrorred_rounded),
+              CustomContainer(
+                  onTap: () {
+                    AppRouter.router
+                        .pushNamed(Paths.settingPageScreenRoute.routeName);
+                  },
+                  text: AppStrings.setting,
+                  icon: Icons.settings_backup_restore_rounded),
             ],
           ),
         ));

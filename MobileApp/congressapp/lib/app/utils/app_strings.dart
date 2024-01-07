@@ -43,4 +43,7 @@ class AppStrings {
 
   static const String calenderTitle = "Calender";
   static const String partyGallery = "Party Gallery";
+
+  static const String setting = "Setting";
+  static const String reportProblem = "Report a Problem";
 }

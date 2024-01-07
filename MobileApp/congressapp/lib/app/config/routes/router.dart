@@ -6,11 +6,13 @@ import 'package:congressapp/presentation/calender/pages/calender_page.dart';
 import 'package:congressapp/presentation/chat/pages/chat_page.dart';
 import 'package:congressapp/presentation/gallery/pages/gallery_page.dart';
 import 'package:congressapp/presentation/home/pages/homepage.dart';
-import 'package:congressapp/presentation/more/pages/setting_page.dart';
+import 'package:congressapp/presentation/more/pages/more_page.dart';
 import 'package:congressapp/presentation/polls/pages/poll_page.dart';
 
 import 'package:congressapp/presentation/profile/pages/edit_profile.dart';
 import 'package:congressapp/presentation/profile/pages/profile_page.dart';
+import 'package:congressapp/presentation/report_problem/pages/reportProblem_page.dart';
+import 'package:congressapp/presentation/setting/pages/setting_page.dart';
 import 'package:congressapp/presentation/splash/pages/splash_page.dart';
 import 'package:flutter/foundation.dart';
 
@@ -134,12 +136,11 @@ class AppRouter {
             navigatorKey: _shellNavigatorMore,
             routes: <RouteBase>[
               GoRoute(
-                  path: Paths.settingPageScreenRoute.path,
-                  name: Paths.settingPageScreenRoute.routeName,
+                  path: Paths.morePageScreenRoute.path,
+                  name: Paths.morePageScreenRoute.routeName,
                   pageBuilder: (context, state) => FadeTransitionPage(
                         key: state.pageKey,
-                        // child: const HomeScreen(),
-                        child: const SettingPage(),
+                        child: const MorePage(),
                       ),
                   routes: [
                     GoRoute(
@@ -148,6 +149,22 @@ class AppRouter {
                       pageBuilder: (context, state) => FadeTransitionPage(
                         key: state.pageKey,
                         child: const GalleryScreen(),
+                      ),
+                    ),
+                    GoRoute(
+                      path: Paths.settingPageScreenRoute.path,
+                      name: Paths.settingPageScreenRoute.routeName,
+                      pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        child: const SettingPage(),
+                      ),
+                    ),
+                    GoRoute(
+                      path: Paths.reportproblemPageScreenRoute.path,
+                      name: Paths.reportproblemPageScreenRoute.routeName,
+                      pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        child: const ReportProblemScreen(),
                       ),
                     ),
                     GoRoute(

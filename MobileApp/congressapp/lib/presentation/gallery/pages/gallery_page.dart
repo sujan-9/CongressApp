@@ -1,6 +1,6 @@
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
 import 'package:congressapp/app/utils/app_strings.dart';
-import 'package:congressapp/presentation/gallery/widgets/image_container.dart';
+import 'package:congressapp/presentation/gallery/pages/widgets/image_container.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

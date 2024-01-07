@@ -1,9 +1,13 @@
+import 'package:congressapp/app/config/routes/path_root.dart';
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
+import 'package:congressapp/app/core/common_widgets/custom_text.dart';
+import 'package:congressapp/app/core/constants/pallets.dart';
 import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:congressapp/presentation/auth/widgets/custom_button.dart';
 import 'package:congressapp/presentation/auth/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -46,7 +50,16 @@ class RegisterScreen extends StatelessWidget {
               CustomButton(
                 name: AppStrings.register,
                 onPressed: () {},
-              )
+              ),
+              gapH32,
+              TextButton(
+                  onPressed: () {
+                    context.go(Paths.loginScreenRoute.path);
+                  },
+                  child: CustomText.medium(
+                    'Already have an account',
+                    color: redColor,
+                  ))
             ],
           ),
         ),

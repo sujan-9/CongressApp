@@ -1,4 +1,4 @@
-import 'package:congressapp/app/config/routes/paths/path_root.dart';
+import 'package:congressapp/app/config/routes/path_root.dart';
 import 'package:congressapp/presentation/auth/pages/login_screen.dart';
 import 'package:congressapp/presentation/auth/pages/register_screen.dart';
 import 'package:congressapp/presentation/bottom_nav/bottom_navbar.dart';
@@ -25,7 +25,7 @@ import '../utils/error_screen.dart';
 
 class AppRouter {
   static final key = GlobalKey<NavigatorState>();
-  //static final parentShellkey = GlobalKey<NavigatorState>();
+
   static final _shellNavigatorHome =
       GlobalKey<NavigatorState>(debugLabel: 'shellHome');
   static final _shellNavigatorChat =
@@ -36,7 +36,7 @@ class AppRouter {
       GlobalKey<NavigatorState>(debugLabel: 'shellMore');
 
   static final router = GoRouter(
-    initialLocation: Paths.homePageScreenRoute.path,
+    initialLocation: Paths.splashRoute.path,
     navigatorKey: key,
     debugLogDiagnostics: kReleaseMode ? false : true,
     routes: [
@@ -64,21 +64,8 @@ class AppRouter {
           key: state.pageKey,
           child: const LoginScreen(),
         ),
-        // redirect: (
-        //   context,
-        //   state,
-
-        // )
-        // {
-
-        //   if (islogged == true) {
-        //     return Paths.homePageScreenRoute.path;
-        //   }
-        //   return Paths.registerScreenRoute.path;
-        // }
       ),
       StatefulShellRoute.indexedStack(
-        // parentNavigatorKey: parentShellkey,
         builder: (context, state, navigationShell) {
           return CustomNavbar(
             navigationShell: navigationShell,

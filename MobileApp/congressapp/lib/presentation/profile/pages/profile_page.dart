@@ -1,4 +1,4 @@
-import 'package:congressapp/app/config/routes/paths/path_root.dart';
+import 'package:congressapp/app/config/routes/path_root.dart';
 import 'package:congressapp/app/config/routes/router.dart';
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
 

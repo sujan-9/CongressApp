@@ -1,4 +1,5 @@
-import 'package:congressapp/app/config/routes/paths/path_root.dart';
+import 'package:congressapp/app/config/routes/path_root.dart';
+import 'package:congressapp/app/core/common_widgets/custom_text.dart';
 
 import 'package:congressapp/app/core/constants/pallets.dart';
 import 'package:congressapp/app/core/constants/sizes.dart';
@@ -69,6 +70,15 @@ class LoginScreen extends ConsumerWidget {
                 context.go(Paths.homePageScreenRoute.path);
               },
             ),
+            gapH32,
+            TextButton(
+                onPressed: () {
+                  context.go(Paths.registerScreenRoute.path);
+                },
+                child: CustomText.medium(
+                  'Create an account',
+                  color: redColor,
+                )),
           ],
         ),
       )),

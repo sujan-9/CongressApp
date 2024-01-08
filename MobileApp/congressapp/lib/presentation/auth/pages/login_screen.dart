@@ -11,11 +11,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginScreen extends ConsumerWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends ConsumerState<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -46,17 +60,19 @@ class LoginScreen extends ConsumerWidget {
         padding: const EdgeInsets.fromLTRB(16, 50, 16, 12),
         child: Column(
           children: [
-            const CustomTextField(
+            CustomTextField(
+              controller: _emailController,
               hintText: AppStrings.username,
-              prefixIcon: SizedBox(
+              prefixIcon: const SizedBox(
                 child: Center(
                     widthFactor: 0.0, child: Icon(Icons.person_2_rounded)),
               ),
             ),
             gapH24,
-            const CustomTextField(
+            CustomTextField(
+              controller: _passController,
               hintText: AppStrings.password,
-              prefixIcon: SizedBox(
+              prefixIcon: const SizedBox(
                 child: Center(
                     widthFactor: 0.0, child: Icon(Icons.lock_outline_rounded)),
               ),

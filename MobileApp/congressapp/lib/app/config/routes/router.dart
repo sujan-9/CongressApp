@@ -1,4 +1,6 @@
 import 'package:congressapp/app/config/routes/path_root.dart';
+import 'package:congressapp/data/models/usermodel.dart';
+import 'package:congressapp/presentation/addPolicy/pages/addpolicy_page.dart';
 import 'package:congressapp/presentation/auth/pages/login_screen.dart';
 import 'package:congressapp/presentation/auth/pages/register_screen.dart';
 import 'package:congressapp/presentation/bottom_nav/bottom_navbar.dart';
@@ -14,6 +16,7 @@ import 'package:congressapp/presentation/profile/pages/profile_page.dart';
 import 'package:congressapp/presentation/report_problem/pages/reportProblem_page.dart';
 import 'package:congressapp/presentation/setting/pages/setting_page.dart';
 import 'package:congressapp/presentation/splash/pages/splash_page.dart';
+import 'package:congressapp/presentation/viewmyid/pages/viewid_page.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
@@ -139,6 +142,14 @@ class AppRouter {
                       ),
                     ),
                     GoRoute(
+                      path: Paths.addPolicyPageScreenRoute.path,
+                      name: Paths.addPolicyPageScreenRoute.routeName,
+                      pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        child: const AddPolicyScreen(),
+                      ),
+                    ),
+                    GoRoute(
                       path: Paths.settingPageScreenRoute.path,
                       name: Paths.settingPageScreenRoute.routeName,
                       pageBuilder: (context, state) => FadeTransitionPage(
@@ -155,6 +166,14 @@ class AppRouter {
                       ),
                     ),
                     GoRoute(
+                      path: Paths.viewIDPageScreenRoute.path,
+                      name: Paths.viewIDPageScreenRoute.routeName,
+                      pageBuilder: (context, state) => FadeTransitionPage(
+                        key: state.pageKey,
+                        child: const ViewMyIDScreen(),
+                      ),
+                    ),
+                    GoRoute(
                       path: Paths.clenderPageScreenRoute.path,
                       name: Paths.clenderPageScreenRoute.routeName,
                       pageBuilder: (context, state) => FadeTransitionPage(
@@ -165,10 +184,13 @@ class AppRouter {
                     GoRoute(
                         path: Paths.profilePageScreenRoute.path,
                         name: Paths.profilePageScreenRoute.routeName,
-                        pageBuilder: (context, state) => FadeTransitionPage(
-                              key: state.pageKey,
-                              child: const ProfilePage(),
-                            ),
+                        pageBuilder: (context, state) {
+                          //  var name = state.extra as UserModel;
+                          return FadeTransitionPage(
+                            key: state.pageKey,
+                            child: const ProfilePage(),
+                          );
+                        },
                         routes: [
                           GoRoute(
                             path: Paths.editProfilePageScreenRoute.path,

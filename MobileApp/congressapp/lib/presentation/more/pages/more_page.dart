@@ -1,7 +1,6 @@
 import 'package:congressapp/app/config/routes/path_root.dart';
 import 'package:congressapp/app/config/routes/router.dart';
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
-
 import 'package:congressapp/app/utils/app_strings.dart';
 import 'package:congressapp/presentation/more/pages/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +15,7 @@ class MorePage extends StatelessWidget {
           title: AppStrings.titleSetting,
         ),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.only(top: 12, bottom: 24),
           child: Column(
             children: [
               CustomContainer(
@@ -58,6 +58,20 @@ class MorePage extends StatelessWidget {
                   },
                   text: AppStrings.setting,
                   icon: Icons.settings_backup_restore_rounded),
+              CustomContainer(
+                  onTap: () {
+                    AppRouter.router
+                        .pushNamed(Paths.addPolicyPageScreenRoute.routeName);
+                  },
+                  text: 'Add Policy',
+                  icon: Icons.policy_rounded),
+              CustomContainer(
+                  onTap: () {
+                    AppRouter.router
+                        .pushNamed(Paths.viewIDPageScreenRoute.routeName);
+                  },
+                  text: 'View My ID',
+                  icon: Icons.person_2_rounded),
             ],
           ),
         ));

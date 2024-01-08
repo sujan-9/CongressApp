@@ -9,11 +9,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: CustomAppbar(title: AppStrings.home),
-        body: Padding(
+        appBar: CustomAppbar(
+          title: AppStrings.home,
+          suffixIcon: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_active_rounded,
+                color: Colors.white,
+              )),
+        ),
+        body: const Padding(
           padding: EdgeInsets.only(top: 12),
           child: Column(
             children: [

@@ -1,5 +1,5 @@
 import 'package:congressapp/app/core/common_widgets/custom_text.dart';
-import 'package:congressapp/app/core/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 
 class CustomSettingContainer extends StatelessWidget {

@@ -8,10 +8,12 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.title,
     this.icon,
+    this.suffixIcon,
   });
 
   final String title;
   final IconButton? icon;
+  final IconButton? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +34,15 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         style: const TextStyle(fontSize: Sizes.p24, color: whiteColor),
       ),
       centerTitle: true,
+
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(15),
         ),
       ),
+      actions: [
+        suffixIcon ?? const SizedBox.shrink(),
+      ],
     );
   }
 

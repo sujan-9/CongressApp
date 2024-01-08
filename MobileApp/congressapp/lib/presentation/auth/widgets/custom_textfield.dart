@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    // required this.controller,
+    this.controller,
     // required this.isVisible,
     required this.hintText,
     this.prefixIcon,
@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly,
     this.focus,
   });
-  // final TextEditingController controller;
+  final TextEditingController? controller;
   // final bool isVisible;
   final String hintText;
   final Widget? prefixIcon;
@@ -36,14 +36,12 @@ class CustomTextField extends StatelessWidget {
             ),
           ]),
       child: TextField(
-        //  controller: ,
+        controller: controller,
         readOnly: readOnly ?? false,
-
         style: const TextStyle(
             fontSize: Sizes.p16,
             color: Colors.black,
             fontWeight: FontWeight.bold),
-
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: const TextStyle(

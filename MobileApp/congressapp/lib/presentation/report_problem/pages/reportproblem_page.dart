@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:io';
 import 'package:congressapp/app/core/common_widgets/custom_appbar.dart';
 import 'package:congressapp/app/core/constants/pallets.dart';
@@ -15,12 +17,15 @@ class ReportProblemScreen extends StatefulWidget {
 }
 
 class _SettingPageState extends State<ReportProblemScreen> {
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
+      GlobalKey<ScaffoldMessengerState>();
+
   TextEditingController problemController = TextEditingController();
   File? selectedImage;
 
   void _submitReport() {
     if (problemController.text.isEmpty && selectedImage == null) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      _scaffoldKey.currentState?.showSnackBar(const SnackBar(
         content:
             Text('Please provide a problem description and select an image.'),
       ));
@@ -29,18 +34,18 @@ class _SettingPageState extends State<ReportProblemScreen> {
       setState(() {
         selectedImage = null;
       });
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Report submitted!'),
+      _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+        content: Text('Report Submitted'),
       ));
     } else if (problemController.text.isNotEmpty && selectedImage == null) {
       problemController.clear();
 
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Report submitted!'),
+      _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+        content: Text('Report Submitted'),
       ));
     } else if (problemController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Please, Describe the problem'),
+      _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+        content: Text('Please describe the problem'),
       ));
     }
   }
@@ -58,15 +63,21 @@ class _SettingPageState extends State<ReportProblemScreen> {
           selectedImage = File(pickedImage.path);
         });
 
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Image selected!'),
+        _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+          content: Text('Image selected'),
         ));
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        _scaffoldKey.currentState?.showSnackBar(const SnackBar(
           content: Text('Image is too large'),
         ));
       }
     } else {}
+  }
+
+  @override
+  void dispose() {
+    problemController.dispose();
+    super.dispose();
   }
 
   @override

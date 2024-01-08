@@ -35,4 +35,8 @@ class Paths {
       routeName: 'reportproblemPageScreen', path: 'reportproblempageScreen');
   static final RouteModel settingPageScreenRoute =
       RouteModel(routeName: 'settingPageScreen', path: 'settingPageScreen');
+  static final RouteModel addPolicyPageScreenRoute =
+      RouteModel(routeName: 'addPolicyPageScreen', path: 'addPolicyPageScreen');
+  static final RouteModel viewIDPageScreenRoute =
+      RouteModel(routeName: 'viewIDPageScreen', path: 'viewIDPageScreen');
 }

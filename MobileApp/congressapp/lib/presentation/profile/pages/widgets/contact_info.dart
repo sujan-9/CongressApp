@@ -4,7 +4,9 @@ import 'package:congressapp/app/core/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class ContactInfo extends StatelessWidget {
-  const ContactInfo({super.key});
+  final String phone;
+  final String email;
+  const ContactInfo({super.key, required this.phone, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +57,9 @@ class ContactInfo extends StatelessWidget {
                 gapW24,
                 Column(
                   children: [
-                    CustomText.small('123456789'),
+                    CustomText.small(phone),
                     gapH16,
-                    CustomText.small('123456789'),
+                    CustomText.small(email),
                   ],
                 ),
               ],
